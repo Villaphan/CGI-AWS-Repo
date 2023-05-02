@@ -1,0 +1,142 @@
+{
+  "version": "21.0.0",
+  "artifacts": {
+    "Tree": {
+      "type": "cdk:tree",
+      "properties": {
+        "file": "tree.json"
+      }
+    },
+    "S3ObjectDanny.assets": {
+      "type": "cdk:asset-manifest",
+      "properties": {
+        "file": "S3ObjectDanny.assets.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+      }
+    },
+    "S3ObjectDanny": {
+      "type": "aws:cloudformation:stack",
+      "environment": "aws://unknown-account/unknown-region",
+      "properties": {
+        "templateFile": "S3ObjectDanny.template.json",
+        "validateOnSynth": false,
+        "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
+        "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/1eae556ce9b1d7fa0c54e00b6459b7d3dda8cc7ffcefbbfd66bee09e157fb5a3.json",
+        "requiresBootstrapStackVersion": 6,
+        "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
+        "additionalDependencies": [
+          "S3ObjectDanny.assets"
+        ],
+        "lookupRole": {
+          "arn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-lookup-role-${AWS::AccountId}-${AWS::Region}",
+          "requiresBootstrapStackVersion": 8,
+          "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version"
+        }
+      },
+      "dependencies": [
+        "S3ObjectDanny.assets"
+      ],
+      "metadata": {
+        "/S3ObjectDanny/example-bucket/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "examplebucketC9DFA43E"
+          }
+        ],
+        "/S3ObjectDanny/example-bucket/Policy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "examplebucketPolicyE09B485E"
+          }
+        ],
+        "/S3ObjectDanny/retrieve_transformed_obj_lambda/ServiceRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "retrievetransformedobjlambdaServiceRole4331C711"
+          }
+        ],
+        "/S3ObjectDanny/retrieve_transformed_obj_lambda/ServiceRole/DefaultPolicy/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "retrievetransformedobjlambdaServiceRoleDefaultPolicy7622F3B4"
+          }
+        ],
+        "/S3ObjectDanny/retrieve_transformed_obj_lambda/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "retrievetransformedobjlambda1C2E0AC4"
+          }
+        ],
+        "/S3ObjectDanny/retrieve_transformed_obj_lambda/invocationRestriction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "retrievetransformedobjlambdainvocationRestrictionCFA26C9B"
+          }
+        ],
+        "/S3ObjectDanny/example-bucket_ap": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "examplebucketap"
+          }
+        ],
+        "/S3ObjectDanny/s3_object_lambda_ap": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "s3objectlambdaap"
+          }
+        ],
+        "/S3ObjectDanny/exampleBucketArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "exampleBucketArn"
+          }
+        ],
+        "/S3ObjectDanny/objectLambdaArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "objectLambdaArn"
+          }
+        ],
+        "/S3ObjectDanny/objectLambdaAccessPointArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "objectLambdaAccessPointArn"
+          }
+        ],
+        "/S3ObjectDanny/objectLambdaAccessPointUrl": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "objectLambdaAccessPointUrl"
+          }
+        ],
+        "/S3ObjectDanny/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/S3ObjectDanny/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/S3ObjectDanny/BootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BootstrapVersion"
+          }
+        ],
+        "/S3ObjectDanny/CheckBootstrapVersion": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CheckBootstrapVersion"
+          }
+        ]
+      },
+      "displayName": "S3ObjectDanny"
+    }
+  }
+}
