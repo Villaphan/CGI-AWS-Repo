@@ -10,7 +10,7 @@ from aws_cdk import (
 )
 
 # configurable variables
-S3_ACCESS_POINT_NAME = "example-test-ap"
+S3_ACCESS_POINT_NAME = "Dannys-test-ap"
 OBJECT_LAMBDA_ACCESS_POINT_NAME = "s3-object-lambda-ap"
 
 
@@ -21,7 +21,7 @@ class S3ObjectLambdaStack(Stack):
                             f"{S3_ACCESS_POINT_NAME}"
 
         # Set up a bucket
-        bucket = s3.Bucket(self, "example-bucket",
+        bucket = s3.Bucket(self, "Dannys-bucket",
                            access_control=s3.BucketAccessControl.BUCKET_OWNER_FULL_CONTROL,
                            encryption=s3.BucketEncryption.S3_MANAGED,
                            block_public_access=s3.BlockPublicAccess.BLOCK_ALL)
